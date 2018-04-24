@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/tooltipText"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="4dp"
+    android:background="@drawable/bg_tooltip"
+    android:gravity="center"
+    android:paddingEnd="@dimen/margin_32dp"
+    android:paddingStart="@dimen/margin_default"
+    android:textColor="@color/white"
+    android:textSize="@dimen/fontSizeDefault"
+    android:visibility="invisible"
+    tools:text="This is tooltip"
+    tools:visibility="visible" />
