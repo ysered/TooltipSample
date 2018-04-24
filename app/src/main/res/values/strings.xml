@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">TooltipSample</string>
+    <string name="tooltip_text">This is tooltip text</string>
+    <string name="show_tooltip">Show tooltip</string>
+    <string name="hint_text">Long press to show tooltip</string>
 </resources>

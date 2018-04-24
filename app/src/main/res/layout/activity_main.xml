@@ -1,21 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:padding="@dimen/margin_default"
     tools:context=".MainActivity">
 
     <com.ysered.tooltipsample.view.TooltipView
         android:id="@+id/tooltip"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="1" />
+        android:text="@string/tooltip_text" />
 
     <Button
         android:id="@+id/showTooltipButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Show tooltip" />
+        android:layout_gravity="center_vertical|end"
+        android:text="@string/show_tooltip" />
 
-</LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/hint_text" />
+
+</FrameLayout>
