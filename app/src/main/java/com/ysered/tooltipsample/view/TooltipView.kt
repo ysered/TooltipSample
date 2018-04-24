@@ -3,10 +3,12 @@ package com.ysered.tooltipsample.view
 import android.content.Context
 import android.util.AttributeSet
 import android.view.LayoutInflater
+import android.view.View
 import android.widget.FrameLayout
 import android.widget.TextView
 import androidx.core.content.withStyledAttributes
 import com.ysered.tooltipsample.R
+import com.ysered.tooltipsample.ext.getPositionOnScreen
 import com.ysered.tooltipsample.ext.runFadeInAndFadeOutAnimation
 
 
@@ -22,6 +24,8 @@ class TooltipView(
 
     companion object {
         const val TOOLTIP_DISPLAY_DURATION_MS = 3000L
+        // TODO: move to view's attributes?
+        private const val MARGIN_RIGHT = 30f
     }
 
     private val tooltipText: TextView
@@ -43,5 +47,18 @@ class TooltipView(
 
     fun show() {
         tooltipText.runFadeInAndFadeOutAnimation(TOOLTIP_DISPLAY_DURATION_MS)
+    }
+
+    fun showToLeftOf(view: View) {
+        tooltipText.measure(0, 0)
+
+        val (x, y) = view.getPositionOnScreen()
+
+        val tooltipX = x - tooltipText.measuredWidth - MARGIN_RIGHT
+        val tooltipY = y - tooltipText.measuredHeight / 2f
+
+        setX(tooltipX)
+        setY(tooltipY)
+        show()
     }
 }

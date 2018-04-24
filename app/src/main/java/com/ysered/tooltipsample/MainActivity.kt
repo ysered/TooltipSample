@@ -11,9 +11,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        showTooltipButton.setOnLongClickListener {
+        showTooltipButton.setOnLongClickListener { button ->
             vibrateDevice()
-            tooltip.show()
+            tooltip.showToLeftOf(button)
             true
         }
     }
